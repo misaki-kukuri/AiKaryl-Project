@@ -6,7 +6,7 @@ import java.util.*
 plugins {
     kotlin("jvm") version "1.3.71"
     java
-    id("com.github.johnrengelman.shadow") version "5.2.0"
+    id("com.github.johnrengelman.shadow")
 }
 
 group = "com.MisakiKukuri.AiKarylProject"
@@ -26,11 +26,14 @@ dependencies {
     compileOnly(kotlin("stdlib-jdk8"))
     compileOnly("net.mamoe:mirai-core:$miraiCoreVersion")
     compileOnly("net.mamoe:mirai-console:$miraiConsoleVersion")
+    //compile("com.google.code.gson:gson:2.4")
 
     testImplementation(kotlin("stdlib-jdk8"))
     testImplementation("net.mamoe:mirai-core:$miraiCoreVersion")
     testImplementation("net.mamoe:mirai-core-qqandroid:$miraiCoreVersion")
     testImplementation("net.mamoe:mirai-console:$miraiConsoleVersion")
+
+    //api("com.google.code.gson:gson:2.4")
 }
 
 java {

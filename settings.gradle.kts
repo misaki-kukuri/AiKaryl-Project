@@ -18,3 +18,15 @@ pluginManagement {
 
 rootProject.name = "AiKarylProject"
 
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+        mavenCentral()
+        google()
+    }
+
+    dependencies{
+        classpath( "com.github.jengelman.gradle.plugins:shadow:5.2.0" )
+    }
+}

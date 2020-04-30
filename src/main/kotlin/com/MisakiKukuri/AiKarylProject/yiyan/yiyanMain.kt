@@ -1,10 +1,7 @@
 package com.MisakiKukuri.AiKarylProject.yiyan
 
 import com.MisakiKukuri.AiKarylProject.PluginMain
-import com.google.gson.Gson
-import kotlinx.coroutines.launch
 import net.mamoe.mirai.console.plugins.withDefaultWriteSave
-import net.mamoe.mirai.event.subscribeGroupMessages
 import java.net.URL
 
 class yiyanMain()
@@ -24,8 +21,15 @@ class yiyanMain()
 
     fun execute(): String{
         val jsonStr = URL(Url).readText()
-        val jsonList = Gson().fromJson(jsonStr,yiyanUrlResult::class.java)
-        return jsonList.data;
+        //val jsonList = Gson().fromJson(jsonStr,yiyanUrlResult::class.java)
+        //return jsonList.data;
+        val jsonStr1 = jsonStr.replace('"',' ',ignoreCase = true)
+            .replace('{',' ',ignoreCase = true)
+            .replace('}',' ',ignoreCase = true)
+            .split(',')
+        val jsonStr2 = jsonStr1[1]
+        val jsonStr3 = jsonStr2.split(':')
+        return jsonStr3[1]
     }
 }
 
